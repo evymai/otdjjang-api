@@ -1,0 +1,51 @@
+[
+  {
+    "model": "otdjjangapi.type",
+    "pk": 1,
+    "fields": {
+      "name": "Shoes"
+    }
+  },
+  {
+    "model": "otdjjangapi.type",
+    "pk": 2,
+    "fields": {
+      "name": "Bottoms"
+    }
+  },
+  {
+    "model": "otdjjangapi.type",
+    "pk": 3,
+    "fields": {
+      "name": "Accessories"
+    }
+  },
+  {
+    "model": "otdjjangapi.type",
+    "pk": 4,
+    "fields": {
+      "name": "Tops"
+    }
+  },
+  {
+    "model": "otdjjangapi.type",
+    "pk": 5,
+    "fields": {
+      "name": "Dresses"
+    }
+  },
+  {
+    "model": "otdjjangapi.type",
+    "pk": 6,
+    "fields": {
+      "name": "Outerwear"
+    }
+  },
+  {
+    "model": "otdjjangapi.type",
+    "pk": 7,
+    "fields": {
+      "name": "Swimwear"
+    }
+  }
+]

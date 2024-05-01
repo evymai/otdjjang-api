@@ -1,0 +1,23 @@
+[
+  {
+    "model": "otdjjangapi.brand",
+    "pk": 1,
+    "fields": {
+      "name": "H&M"
+    }
+  },
+  {
+    "model": "otdjjangapi.brand",
+    "pk": 2,
+    "fields": {
+      "name": "Forever21"
+    }
+  },
+  {
+    "model": "otdjjangapi.brand",
+    "pk": 3,
+    "fields": {
+      "name": "Zara"
+    }
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 1,
+    "fields": {
+      "outfit": 1,
+      "article": 1
+    }
+  },
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 2,
+    "fields": {
+      "outfit": 1,
+      "article": 2
+    }
+  },
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 3,
+    "fields": {
+      "outfit": 1,
+      "article": 4
+    }
+  },
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 4,
+    "fields": {
+      "outfit": 2,
+      "article": 5
+    }
+  },
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 5,
+    "fields": {
+      "outfit": 2,
+      "article": 6
+    }
+  }
+]

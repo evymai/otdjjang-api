@@ -1,0 +1,21 @@
+[
+    {
+      "model": "otdjjangapi.userarticle",
+      "pk": 1,
+      "fields": {
+        "user": 1,
+        "article": 1,
+        "size": 1 
+      }
+    },
+    {
+      "model": "otdjjangapi.userarticle",
+      "pk": 2,
+      "fields": {
+        "user": 1,
+        "article": 2,
+        "size": 1 
+      }
+    }
+  ]
+  
