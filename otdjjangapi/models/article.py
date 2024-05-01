@@ -1,4 +1,6 @@
 from django.db import models
+from .brand import Brand
+from .type import Type
 
 
 class Article(models.Model):
