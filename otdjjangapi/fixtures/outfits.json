@@ -1,0 +1,19 @@
+[
+    {
+      "model": "otdjjangapi.outfit",
+      "pk": 1,
+      "fields": {
+        "name": "Casual Day Outfit",
+        "user": 1
+      }
+    },
+    {
+      "model": "otdjjangapi.outfit",
+      "pk": 2,
+      "fields": {
+        "name": "Formal Evening Attire",
+        "user": 1
+      }
+    }
+  ]
+  
