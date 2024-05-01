@@ -1,4 +1,5 @@
 from django.db import models
+from .outfit import Outfit
 
 
 class OutfitPhoto(models.Model):

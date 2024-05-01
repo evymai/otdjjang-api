@@ -14,4 +14,4 @@ python3 manage.py loaddata articles
 python3 manage.py loaddata userarticles
 python3 manage.py loaddata outfits
 python3 manage.py loaddata outfitarticles
-python3 manage.py loaddata outfitphoto
+python3 manage.py loaddata outfitphotos
