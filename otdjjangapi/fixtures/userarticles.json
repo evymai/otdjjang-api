@@ -4,8 +4,7 @@
       "pk": 1,
       "fields": {
         "user": 1,
-        "article": 1,
-        "size": 1 
+        "article": 1
       }
     },
     {
@@ -13,8 +12,39 @@
       "pk": 2,
       "fields": {
         "user": 1,
-        "article": 2,
-        "size": 1 
+        "article": 2
+      }
+    },
+    {
+      "model": "otdjjangapi.userarticle",
+      "pk": 3,
+      "fields": {
+        "user": 1,
+        "article": 3
+      }
+    },
+    {
+      "model": "otdjjangapi.userarticle",
+      "pk": 4,
+      "fields": {
+        "user": 1,
+        "article": 4
+      }
+    },
+    {
+      "model": "otdjjangapi.userarticle",
+      "pk": 5,
+      "fields": {
+        "user": 1,
+        "article": 5
+      }
+    },
+    {
+      "model": "otdjjangapi.userarticle",
+      "pk": 6,
+      "fields": {
+        "user": 1,
+        "article": 6
       }
     }
   ]
