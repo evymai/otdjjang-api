@@ -1,4 +1,5 @@
-from rest_framework import viewsets, status, permissions
+from rest_framework.viewsets import ViewSet
+from rest_framework import status, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import serializers
@@ -15,7 +16,7 @@ class UserSerializer(serializers.ModelSerializer):
         extra_kwargs = {"password": {"write_only": True}}
 
 
-class UserViewSet(viewsets.ViewSet):
+class Users(ViewSet):
     queryset = User.objects.all()
     permission_classes = [permissions.AllowAny]
 

@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "outfit": 1,
-      "article": 1
+      "user_article": 1
     }
   },
   {
@@ -12,7 +12,7 @@
     "pk": 2,
     "fields": {
       "outfit": 1,
-      "article": 2
+      "user_article": 2
     }
   },
   {
@@ -20,7 +20,7 @@
     "pk": 3,
     "fields": {
       "outfit": 1,
-      "article": 4
+      "user_article": 4
     }
   },
   {
@@ -28,7 +28,7 @@
     "pk": 4,
     "fields": {
       "outfit": 2,
-      "article": 5
+      "user_article": 5
     }
   },
   {
@@ -36,7 +36,7 @@
     "pk": 5,
     "fields": {
       "outfit": 2,
-      "article": 6
+      "user_article": 6
     }
   }
 ]
