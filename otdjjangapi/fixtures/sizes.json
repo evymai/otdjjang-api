@@ -47,5 +47,61 @@
     "fields": {
       "size": "N/A"
     }
+  },
+  {
+    "model": "otdjjangapi.size",
+    "pk": 8,
+    "fields": {
+      "size": "US 5/5.5"
+    }
+  },
+  {
+    "model": "otdjjangapi.size",
+    "pk": 9,
+    "fields": {
+      "size": "US 6/6.5"
+    }
+  },
+  {
+    "model": "otdjjangapi.size",
+    "pk": 10,
+    "fields": {
+      "size": "US 7/7.5"
+    }
+  },
+  {
+    "model": "otdjjangapi.size",
+    "pk": 11,
+    "fields": {
+      "size": "US 8/8.5"
+    }
+  },
+  {
+    "model": "otdjjangapi.size",
+    "pk": 12,
+    "fields": {
+      "size": "US 9/9.5"
+    }
+  },
+  {
+    "model": "otdjjangapi.size",
+    "pk": 13,
+    "fields": {
+      "size": "US 10/10.5"
+    }
+  },
+  {
+    "model": "otdjjangapi.size",
+    "pk": 14,
+    "fields": {
+      "size": "US 11/11.5"
+    }
+  },
+  {
+    "model": "otdjjangapi.size",
+    "pk": 15,
+    "fields": {
+      "size": "US 12"
+    }
   }
 ]
