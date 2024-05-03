@@ -12,6 +12,7 @@ router.register(r"brands", Brands, "brand")
 router.register(r"types", Types, "type")
 router.register(r"sizes", Sizes, "size")
 router.register(r"articles", Articles, "article")
+router.register(r"userarticles", UserArticles, "userarticle")
 
 urlpatterns = [
     path("", include(router.urls)),
