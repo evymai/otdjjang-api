@@ -1,9 +1,10 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
-from otdjjangapi.models import Article
+from otdjjangapi.models import Article, Brand, Type
 from .brand import BrandSerializer
 from .type import TypeSerializer
+from rest_framework import status
 
 
 class ArticleSerializer(serializers.ModelSerializer):
@@ -37,11 +38,12 @@ class Articles(ViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     def create(self, request):
+
         # Create a new article
         new_article = Article()
         new_article.name = request.data["name"]
-        new_article.brand = request.data["brand"]
-        new_article.type = request.data["type"]
+        new_article.brand = Brand.objects.get(pk=request.data["brand_id"])
+        new_article.type = Type.objects.get(pk=request.data["type_id"])
         new_article.image_url = request.data["image_url"]
 
         new_article.save()
