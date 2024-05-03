@@ -13,7 +13,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ("name", "brand", "type", "image_url")
+        fields = ["id", "name", "brand", "type", "image_url"]
 
 
 class Articles(ViewSet):
@@ -84,6 +84,6 @@ class Articles(ViewSet):
 
         except Article.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-            
+
         except Exception as ex:
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)

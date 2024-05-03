@@ -3,10 +3,12 @@ from rest_framework import serializers
 from rest_framework.response import Response
 from otdjjangapi.models import Type
 
+
 class TypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Type
-        fields = ['id', 'name']
+        fields = ["id", "name"]
+
 
 class Types(ViewSet):
 
@@ -25,5 +27,3 @@ class Types(ViewSet):
 
         except Type.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-
-    
