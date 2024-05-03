@@ -2,6 +2,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework import serializers
 from rest_framework.response import Response
 from otdjjangapi.models import Brand
+from rest_framework import status
 
 
 class BrandSerializer(serializers.ModelSerializer):
