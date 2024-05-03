@@ -4,7 +4,8 @@
       "pk": 1,
       "fields": {
         "user": 1,
-        "article": 1
+        "article": 1,
+        "size": 2
       }
     },
     {
@@ -12,7 +13,8 @@
       "pk": 2,
       "fields": {
         "user": 1,
-        "article": 2
+        "article": 2,
+        "size": 2
       }
     },
     {
@@ -20,7 +22,8 @@
       "pk": 3,
       "fields": {
         "user": 1,
-        "article": 3
+        "article": 3,
+        "size": 2
       }
     },
     {
@@ -28,7 +31,8 @@
       "pk": 4,
       "fields": {
         "user": 1,
-        "article": 4
+        "article": 4,
+        "size": 2
       }
     },
     {
@@ -36,7 +40,8 @@
       "pk": 5,
       "fields": {
         "user": 1,
-        "article": 5
+        "article": 5,
+        "size": 2
       }
     },
     {
@@ -44,7 +49,17 @@
       "pk": 6,
       "fields": {
         "user": 1,
-        "article": 6
+        "article": 6,
+        "size": 2
+      }
+    },
+    {
+      "model": "otdjjangapi.userarticle",
+      "pk": 4,
+      "fields": {
+        "user": 2,
+        "article": 4,
+        "size": 4
       }
     }
   ]

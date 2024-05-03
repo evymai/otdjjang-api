@@ -1,10 +1,11 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
+from rest_framework import status
 from otdjjangapi.models import Article, Brand, Type
 from .brand import BrandSerializer
 from .type import TypeSerializer
-from rest_framework import status
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 
 class ArticleSerializer(serializers.ModelSerializer):
@@ -18,20 +19,21 @@ class ArticleSerializer(serializers.ModelSerializer):
 
 
 class Articles(ViewSet):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def list(self, request):
         # get all articles
-        Articles = Article.objects.all()
+        articles = Article.objects.all()
         serializer = ArticleSerializer(
-            Articles, many=True, context={"request": request}
+            articles, many=True, context={"request": request}
         )
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
         # get one article by PK
         try:
-            Article = Article.objects.get(pk=pk)
-            serializer = ArticleSerializer(Article, context={"request": request})
+            article = Article.objects.get(pk=pk)
+            serializer = ArticleSerializer(article, context={"request": request})
             return Response(serializer.data)
 
         except Article.DoesNotExist:
