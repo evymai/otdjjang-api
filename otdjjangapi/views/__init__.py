@@ -6,3 +6,5 @@ from .type import Types
 from .size import Sizes
 from .article import Articles
 from .userarticle import UserArticles
+from .outfit import Outfits
+from .outfitarticle import OutfitArticles

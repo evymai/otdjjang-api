@@ -14,10 +14,18 @@ class BrandSerializer(serializers.ModelSerializer):
 class Brands(ViewSet):
 
     def list(self, request):
-        # Get all brands
-        brands = Brand.objects.all()
-        serializer = BrandSerializer(brands, many=True, context={"request": request})
-        return Response(serializer.data)
+        try:
+            # Get all brands
+            brands = Brand.objects.all()
+            serializer = BrandSerializer(
+                brands, many=True, context={"request": request}
+            )
+            return Response(serializer.data)
+
+        except Exception as ex:
+            return Response(
+                {"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
     def retrieve(self, request, pk=None):
         # Get one brand by PK
@@ -30,14 +38,20 @@ class Brands(ViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     def create(self, request):
-        # Create a new brand
-        name = request.data.get("name")
+        try:
+            # Extracting brand name from request data
+            name = request.data.get("name")
 
-        # creates and saves instance of brand
-        brand = Brand.objects.create(name=name)
+            # Creating and saving instance of brand
+            brand = Brand.objects.create(name=name)
 
-        serializer = BrandSerializer(brand, context={"request": request})
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+            serializer = BrandSerializer(brand, context={"request": request})
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        except Exception as ex:
+            return Response(
+                {"message": str(ex)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
     def destroy(self, request, pk=None):
         try:
