@@ -14,10 +14,15 @@ class TypeSerializer(serializers.ModelSerializer):
 class Types(ViewSet):
 
     def list(self, request):
-        # get all types
-        types = Type.objects.all()
-        serializer = TypeSerializer(types, many=True, context={"request": request})
-        return Response(serializer.data)
+        try:
+            # get all types
+            types = Type.objects.all()
+            serializer = TypeSerializer(types, many=True, context={"request": request})
+            return Response(serializer.data)
+        
+        except Exception as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
     def retrieve(self, request, pk=None):
         # get one type by PK

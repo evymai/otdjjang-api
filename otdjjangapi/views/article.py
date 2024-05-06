@@ -22,12 +22,17 @@ class Articles(ViewSet):
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def list(self, request):
-        # get all articles
-        articles = Article.objects.all()
-        serializer = ArticleSerializer(
-            articles, many=True, context={"request": request}
-        )
-        return Response(serializer.data)
+        try:
+            # get all articles
+            articles = Article.objects.all()
+            serializer = ArticleSerializer(
+                articles, many=True, context={"request": request}
+            )
+            return Response(serializer.data)
+        except Exception as ex:
+            return Response(
+                {"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
     def retrieve(self, request, pk=None):
         # get one article by PK
@@ -40,18 +45,32 @@ class Articles(ViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     def create(self, request):
+        try:
+            # Create a new article
+            new_article = Article()
+            new_article.name = request.data["name"]
+            new_article.brand = Brand.objects.get(pk=request.data["brand_id"])
+            new_article.type = Type.objects.get(pk=request.data["type_id"])
+            new_article.image_url = request.data["image_url"]
 
-        # Create a new article
-        new_article = Article()
-        new_article.name = request.data["name"]
-        new_article.brand = Brand.objects.get(pk=request.data["brand_id"])
-        new_article.type = Type.objects.get(pk=request.data["type_id"])
-        new_article.image_url = request.data["image_url"]
+            new_article.save()
 
-        new_article.save()
+            serializer = ArticleSerializer(new_article, context={"request": request})
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except Brand.DoesNotExist:
+            return Response(
+                {"message": "Brand does not exist"}, status=status.HTTP_400_BAD_REQUEST
+            )
 
-        serializer = ArticleSerializer(new_article, context={"request": request})
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except Type.DoesNotExist:
+            return Response(
+                {"message": "Type does not exist"}, status=status.HTTP_400_BAD_REQUEST
+            )
+
+        except Exception as ex:
+            return Response(
+                {"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
     def update(self, request, pk=None):
         try:

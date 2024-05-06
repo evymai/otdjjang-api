@@ -24,15 +24,19 @@ class UserArticles(ViewSet):
         # Get the authenticated user
         user = request.user
 
-        # Get all user articles for the authenticated user
-        user_articles = UserArticle.objects.filter(user=user)
+        try:
+            # Get all user articles for the authenticated user
+            user_articles = UserArticle.objects.filter(user=user)
 
-        # Serialize the user articles
-        serializer = UserArticleSerializer(
-            user_articles, many=True, context={"request": request}
-        )
+            # Serialize the user articles
+            serializer = UserArticleSerializer(
+                user_articles, many=True, context={"request": request}
+            )
 
-        return Response(serializer.data)
+            return Response(serializer.data)
+
+        except Exception as ex:
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def retrieve(self, request, pk=None):
         # Get the authenticated user
@@ -53,22 +57,30 @@ class UserArticles(ViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     def create(self, request):
-        # Get the authenticated user
-        user = request.user
+        try:
+            # Get the authenticated user
+            user = request.user
 
-        # Create a new user article
-        user_article = UserArticle()
-        user_article.user = user
-        user_article.article = Article.objects.get(pk=request.data["article_id"])
-        user_article.size = Size.objects.get(pk=request.data["size_id"])
+            # Create a new user article
+            user_article = UserArticle()
+            user_article.user = user
+            user_article.article = Article.objects.get(pk=request.data["article_id"])
+            user_article.size = Size.objects.get(pk=request.data["size_id"])
 
-        # Save the user article
-        user_article.save()
+            # Save the user article
+            user_article.save()
 
-        # Serialize the user article
-        serializer = UserArticleSerializer(user_article, context={"request": request})
+            # Serialize the user article
+            serializer = UserArticleSerializer(
+                user_article, context={"request": request}
+            )
 
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        except Exception as ex:
+            return Response(
+                {"message": str(ex)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
     def destroy(self, request, pk=None):
         # Get the authenticated user

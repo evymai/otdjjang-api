@@ -14,10 +14,15 @@ class SizeSerializer(serializers.ModelSerializer):
 class Sizes(ViewSet):
 
     def list(self, request):
-        # get all Sizes
-        sizes = Size.objects.all()
-        serializer = SizeSerializer(sizes, many=True, context={"request": request})
-        return Response(serializer.data)
+        try: 
+            # get all Sizes
+            sizes = Size.objects.all()
+            serializer = SizeSerializer(sizes, many=True, context={"request": request})
+            return Response(serializer.data)
+        
+        except Exception as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
     def retrieve(self, request, pk=None):
         # get one Size by PK
