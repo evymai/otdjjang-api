@@ -55,9 +55,9 @@ class Brands(ViewSet):
 
     def destroy(self, request, pk=None):
         try:
-            Brand = Brand.objects.get(pk=pk)
-            self.check_object_permissions(request, Brand)
-            Brand.delete()
+            brand = Brand.objects.get(pk=pk)
+            self.check_object_permissions(request, brand)
+            brand.delete()
 
             return Response(status=status.HTTP_204_NO_CONTENT)
 
