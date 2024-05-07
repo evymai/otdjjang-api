@@ -3,7 +3,7 @@
     "model": "auth.user",
     "pk": 1,
     "fields": {
-      "password": "pbkdf2_sha256$150000$fHDURJBIASpx$trZS1MWc6YiNe5EYNBap+P+zMAwpNgNbUZH/b9bgvdw=",
+      "password": "pbkdf2_sha256$720000$g8JP26iwjGpRnVjpOknwqR$OnaNprksOz7Wc98D91nLxU1LqJ6GCrAv0ScnKblBlzw=",
       "last_login": null,
       "is_superuser": false,
       "username": "emaister",
@@ -20,7 +20,7 @@
     "model": "auth.user",
     "pk": 2,
     "fields": {
-      "password": "pbkdf2_sha256$150000$fHDURJBIASpx$trZS1MWc6YiNe5EYNBap+P+zMAwpNgNbUZH/b9bgvdw=",
+      "password": "pbkdf2_sha256$720000$g8JP26iwjGpRnVjpOknwqR$OnaNprksOz7Wc98D91nLxU1LqJ6GCrAv0ScnKblBlzw=",
       "last_login": null,
       "is_superuser": false,
       "username": "subsubs",
