@@ -15,7 +15,17 @@ class ArticleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ["id", "name", "brand", "type", "image_url"]
+        fields = ["id", "name", "brand", "type", "image_url", "creator"]
+
+
+class ArticleUpdateSerializer(serializers.ModelSerializer):
+    brand = serializers.PrimaryKeyRelatedField(queryset=Brand.objects.all())
+    type = serializers.PrimaryKeyRelatedField(queryset=Type.objects.all())
+    creator = serializers.ReadOnlyField(source='creator.id')
+
+    class Meta:
+        model = Article
+        fields = ["id", "name", "brand", "type", "image_url", "creator"]
 
 
 class Articles(ViewSet):
@@ -45,6 +55,7 @@ class Articles(ViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     def create(self, request):
+        user = request.user
         try:
             # Create a new article
             new_article = Article()
@@ -52,6 +63,7 @@ class Articles(ViewSet):
             new_article.brand = Brand.objects.get(pk=request.data["brand_id"])
             new_article.type = Type.objects.get(pk=request.data["type_id"])
             new_article.image_url = request.data["image_url"]
+            new_article.creator = user
 
             new_article.save()
 
@@ -74,23 +86,19 @@ class Articles(ViewSet):
 
     def update(self, request, pk=None):
         try:
-
             article = Article.objects.get(pk=pk)
-
-            # Is the authenticated user allowed to edit this Article?
             self.check_object_permissions(request, Article)
 
-            serializer = ArticleSerializer(data=request.data)
+            serializer = ArticleUpdateSerializer(article, data=request.data)
             if serializer.is_valid():
                 article.name = request.data["name"]
-                article.brand = request.data["brand"]
-                article.type = request.data["type"]
+                article.brand_id = request.data["brand"]
+                article.type_id = request.data["type"]
                 article.image_url = request.data["image_url"]
-
                 article.save()
 
-                serializer = ArticleSerializer(article, context={"request": request})
-                return Response(None, status.HTTP_204_NO_CONTENT)
+                serializer.save()
+                return Response(serializer.data, status.HTTP_204_NO_CONTENT)
 
             return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
 
