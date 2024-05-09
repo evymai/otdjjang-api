@@ -3,21 +3,42 @@
     "model": "otdjjangapi.brand",
     "pk": 1,
     "fields": {
-      "name": "H&M"
+      "name": "Fendi"
     }
   },
   {
     "model": "otdjjangapi.brand",
     "pk": 2,
     "fields": {
-      "name": "Forever21"
+      "name": "Acne Studios"
     }
   },
   {
     "model": "otdjjangapi.brand",
     "pk": 3,
     "fields": {
-      "name": "Zara"
+      "name": "Nice Ghost Club"
+    }
+  },
+  {
+    "model": "otdjjangapi.brand",
+    "pk": 4,
+    "fields": {
+      "name": "Balenciaga"
+    }
+  },
+  {
+    "model": "otdjjangapi.brand",
+    "pk": 5,
+    "fields": {
+      "name": "Louis Vuitton"
+    }
+  },
+  {
+    "model": "otdjjangapi.brand",
+    "pk": 6,
+    "fields": {
+      "name": "Ralph Lauren"
     }
   }
 ]

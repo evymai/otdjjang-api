@@ -3,17 +3,17 @@
       "model": "otdjjangapi.outfit",
       "pk": 1,
       "fields": {
-        "name": "Casual Day Outfit",
+        "name": "Follow Again Concert",
         "user": 1
       }
     },
     {
-      "model": "otdjjangapi.outfit",
-      "pk": 2,
-      "fields": {
-        "name": "Formal Evening Attire",
-        "user": 1
+        "model": "otdjjangapi.outfit",
+        "pk": 2,
+        "fields": {
+          "name": "Fendi Spring",
+          "user": 2
+        }
       }
-    }
   ]
   

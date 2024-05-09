@@ -3,10 +3,10 @@
     "model": "otdjjangapi.article",
     "pk": 1,
     "fields": {
-      "brand": 1,
-      "type": 1,
-      "name": "Running Shoes",
-      "image_url": null,
+      "brand": 2,
+      "type": 2,
+      "name": "Patchwork Jeans",
+      "image": "article_imgs/AcneStudiosPatchworkJeans.webp",
       "creator": 1
     }
   },
@@ -14,10 +14,10 @@
     "model": "otdjjangapi.article",
     "pk": 2,
     "fields": {
-      "brand": 2,
-      "type": 2,
-      "name": "Jeans",
-      "image_url": null,
+      "brand": 4,
+      "type": 1,
+      "name": "3XL Grey Sneakers",
+      "image": "article_imgs/Balenciaga3XLSneakerGrey.png",
       "creator": 1
     }
   },
@@ -26,9 +26,9 @@
     "pk": 3,
     "fields": {
       "brand": 3,
-      "type": 3,
-      "name": "Watch",
-      "image_url": null,
+      "type": 4,
+      "name": "Shooting Star Tee",
+      "image": "article_imgs/NiceGhostClubMovingSymbolShirt.jpeg",
       "creator": 1
     }
   },
@@ -37,9 +37,9 @@
     "pk": 4,
     "fields": {
       "brand": 1,
-      "type": 4,
-      "name": "T-Shirt",
-      "image_url": null,
+      "type": 6,
+      "name": "Black Viscose Cardigan",
+      "image": "article_imgs/FendiBlackViscoseCardigan.png",
       "creator": 2
     }
   },
@@ -47,22 +47,22 @@
     "model": "otdjjangapi.article",
     "pk": 5,
     "fields": {
-      "brand": 3,
-      "type": 5,
-      "name": "Little Black Dress",
-      "image_url": null,
-      "creator": 1
+      "brand": 1,
+      "type": 4,
+      "name": "Black Viscose Sweater",
+      "image": "article_imgs/FendiBlackViscoseSweater.png",
+      "creator": 2
     }
   },
   {
     "model": "otdjjangapi.article",
     "pk": 6,
     "fields": {
-      "brand": 3,
-      "type": 6,
-      "name": "Leather Jacket",
-      "image_url": null
-      ,"creator": 2
+      "brand": 1,
+      "type": 1,
+      "name": "Filo Pumps",
+      "image": "article_imgs/FendiFilo.png",
+      "creator": 2
     }
   },
   {
@@ -70,9 +70,53 @@
     "pk": 7,
     "fields": {
       "brand": 1,
-      "type": 7,
-      "name": "Swimsuit",
-      "image_url": null,
+      "type": 3,
+      "name": "Mini Fendessence Purse",
+      "image": "article_imgs/FendiMiniFendessence.png",
+      "creator": 2
+    }
+  },
+  {
+    "model": "otdjjangapi.article",
+    "pk": 8,
+    "fields": {
+      "brand": 1,
+      "type": 2,
+      "name": "Mohair Shorts",
+      "image": "article_imgs/FendiMohairShorts.png",
+      "creator": 2
+    }
+  },
+  {
+    "model": "otdjjangapi.article",
+    "pk": 9,
+    "fields": {
+      "brand": 1,
+      "type": 3,
+      "name": "O'Lock Bracelet",
+      "image": "article_imgs/FendiOlockBracelet.png",
+      "creator": 2
+    }
+  },
+  {
+    "model": "otdjjangapi.article",
+    "pk": 10,
+    "fields": {
+      "brand": 1,
+      "type": 3,
+      "name": "O'Lock Earrings",
+      "image": "article_imgs/FendiOLockEarrings.png",
+      "creator": 2
+    }
+  },
+  {
+    "model": "otdjjangapi.article",
+    "pk": 11,
+    "fields": {
+      "brand": 1,
+      "type": 3,
+      "name": "Silk Wrappy",
+      "image": "article_imgs/FendiSilkWrappy.png",
       "creator": 2
     }
   }
