@@ -7,3 +7,4 @@ from .article import Articles
 from .userarticle import UserArticles
 from .outfit import Outfits
 from .outfitarticle import OutfitArticles
+from .outfitphoto import OutfitPhotos

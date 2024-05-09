@@ -1,6 +1,4 @@
 from django.db import models
-from .outfit import Outfit
-from .userarticle import UserArticle
 
 
 class OutfitArticle(models.Model):

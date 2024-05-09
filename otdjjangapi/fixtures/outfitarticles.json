@@ -20,7 +20,7 @@
     "pk": 3,
     "fields": {
       "outfit": 1,
-      "user_article": 4
+      "user_article": 3
     }
   },
   {
@@ -28,7 +28,7 @@
     "pk": 4,
     "fields": {
       "outfit": 2,
-      "user_article": 5
+      "user_article": 4
     }
   },
   {
@@ -36,7 +36,55 @@
     "pk": 5,
     "fields": {
       "outfit": 2,
+      "user_article": 5
+    }
+  },
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 6,
+    "fields": {
+      "outfit": 2,
       "user_article": 6
+    }
+  },
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 7,
+    "fields": {
+      "outfit": 2,
+      "user_article": 7
+    }
+  },
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 8,
+    "fields": {
+      "outfit": 2,
+      "user_article": 8
+    }
+  },
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 9,
+    "fields": {
+      "outfit": 2,
+      "user_article": 9
+    }
+  },
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 10,
+    "fields": {
+      "outfit": 2,
+      "user_article": 10
+    }
+  },
+  {
+    "model": "otdjjangapi.outfitarticle",
+    "pk": 11,
+    "fields": {
+      "outfit": 2,
+      "user_article": 11
     }
   }
 ]

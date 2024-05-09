@@ -15,17 +15,17 @@ class ArticleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ["id", "name", "brand", "type", "image_url", "creator"]
+        fields = ["id", "name", "brand", "type", "image", "creator"]
 
 
 class ArticleUpdateSerializer(serializers.ModelSerializer):
     brand = serializers.PrimaryKeyRelatedField(queryset=Brand.objects.all())
     type = serializers.PrimaryKeyRelatedField(queryset=Type.objects.all())
-    creator = serializers.ReadOnlyField(source='creator.id')
+    creator = serializers.ReadOnlyField(source="creator.id")
 
     class Meta:
         model = Article
-        fields = ["id", "name", "brand", "type", "image_url", "creator"]
+        fields = ["id", "name", "brand", "type", "creator"]
 
 
 class Articles(ViewSet):
@@ -62,9 +62,8 @@ class Articles(ViewSet):
             new_article.name = request.data["name"]
             new_article.brand = Brand.objects.get(pk=request.data["brand_id"])
             new_article.type = Type.objects.get(pk=request.data["type_id"])
-            new_article.image_url = request.data["image_url"]
+            new_article.image = request.FILES["image"]
             new_article.creator = user
-
             new_article.save()
 
             serializer = ArticleSerializer(new_article, context={"request": request})
@@ -94,7 +93,7 @@ class Articles(ViewSet):
                 article.name = request.data["name"]
                 article.brand_id = request.data["brand"]
                 article.type_id = request.data["type"]
-                article.image_url = request.data["image_url"]
+
                 article.save()
 
                 serializer.save()

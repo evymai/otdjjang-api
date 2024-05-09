@@ -35,7 +35,9 @@ class OutfitArticles(ViewSet):
             return Response(serializer.data)
 
         except Exception as ex:
-            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
     def retrieve(self, request, pk=None):
         try:
@@ -51,29 +53,38 @@ class OutfitArticles(ViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
         except Exception as ex:
-            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-            
+            return Response(
+                {"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
     def create(self, request):
         try:
             # Create a new outfit article
             outfit_article = OutfitArticle()
             outfit_article.outfit = Outfit.objects.get(pk=request.data["outfit_id"])
-            outfit_article.user_article = UserArticle.objects.get(pk=request.data["user_article_id"])
+            outfit_article.user_article = UserArticle.objects.get(
+                pk=request.data["user_article_id"]
+            )
 
             # Save the outfit article
             outfit_article.save()
 
             # Serialize the Outfit article
-            serializer = OutfitArticleSerializer(outfit_article, context={"request": request})
+            serializer = OutfitArticleSerializer(
+                outfit_article, context={"request": request}
+            )
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         except KeyError as key_error:
-            return Response({"key error": str(key_error)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"key error": str(key_error)}, status=status.HTTP_400_BAD_REQUEST
+            )
 
         except Exception as ex:
-            return Response({"error": str(ex)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+            return Response(
+                {"error": str(ex)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
     def destroy(self, request, pk=None):
         try:
@@ -92,4 +103,6 @@ class OutfitArticles(ViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
         except Exception as ex:
-            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )

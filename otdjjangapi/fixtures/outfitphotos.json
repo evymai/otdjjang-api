@@ -1,1 +1,21 @@
-[]
+[
+    {
+      "model": "otdjjangapi.outfitphoto",
+      "pk": 1,
+      "fields": {
+        "outfit": 1,
+        "worn_on": "2024-05-06T10:00:00Z",
+        "image": "/fitcheck_imgs/WonwooFit.jpeg"
+      }
+    },
+    {
+        "model": "otdjjangapi.outfitphoto",
+        "pk": 2,
+        "fields": {
+          "outfit": 2,
+          "worn_on": "2024-04-25T10:00:00Z",
+          "image": "/fitcheck_imgs/MinaFendi.png"
+        }
+      }
+  ]
+  
