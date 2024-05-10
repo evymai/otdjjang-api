@@ -119,5 +119,50 @@
       "image": "article_imgs/FendiSilkWrappy.png",
       "creator": 2
     }
+  },
+  {
+    "model": "otdjjangapi.article",
+    "pk": 12,
+    "fields": {
+      "brand": 6,
+      "type": 4,
+      "name": "Blue Tee",
+      "image": "article_imgs/PoloRalphLaurenBlueTshirt.jpeg",
+      "creator": 1
+    }
+  },
+  {
+    "model": "otdjjangapi.article",
+    "pk": 13,
+    "fields": {
+      "brand": 6,
+      "type": 6,
+      "name": "Embroidered Chino Jacket",
+      "image": "article_imgs/PoloRalphLaurenEmbroideredChinoJacket.png",
+      "creator": 1
+    }
+  },
+  {
+    "model": "otdjjangapi.article",
+    "pk": 14,
+    "fields": {
+      "brand": 6,
+      "type": 2,
+      "name": "Salinger Chino Pants",
+      "image": "article_imgs/PoloRalphLaurenSalingerChinoPants.png",
+      "creator": 1
+    }
+  }
+  ,
+  {
+    "model": "otdjjangapi.article",
+    "pk": 15,
+    "fields": {
+      "brand": 6,
+      "type": 3,
+      "name": "USA Cap",
+      "image": "article_imgs/PoloRalphLaurenUSACap.jpg",
+      "creator": 2
+    }
   }
 ]
